@@ -1,31 +1,70 @@
-.App {
+.body{
+  background-color:#fff;
+}
+.card-tittle{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:center;
+  color: #646464;
+}
+.list-wrapper{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:  flex-start;
+
+}
+.item{
+  /* width: 25%; */
+  margin: 12px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card-box{
+  /* width: 100px; */
+  border: none;
+  background-color: #fff;
+  padding: 12px;
+  cursor:pointer;
+  border:1px solid  #010162;
+  color: #010162;
+  font-weight: 500;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.card-box:hover{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 6px;
+  border: 1px solid rgb(190, 190, 190);
 }
-
-.App-link {
-  color: #61dafb;
+.image-container{
+  display:flex;
+  flex-direction: row;
 }
-
-.heart {
-  color: #ff0000;
+.image-gallery{
+    /* display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 8px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* gap: 10px; */
 }
-
-.small {
-  font-size: 0.75rem;
+.img-card{
+    width: 150;
+    margin: 12px;
+    text-align: center;
+    cursor:pointer;
+}
+.image-preview{
+  margin: 12px;
+}
+.image-preview img{
+  width: 300px;
+  position: sticky;
+  top: 25px;
+}
+.active{
+  border: 1px solid rgb(2 73 233);
+  padding: 2px;
 }
