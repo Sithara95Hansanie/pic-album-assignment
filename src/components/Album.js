@@ -6,11 +6,15 @@ import React,{useState, useEffect} from "react";
 const Album = () =>{
     let params = useParams();
     const [picture, setPicture] = useState([]);
-    const [toggle, setToggle] = useState('');
+    const [url, setUrl] = useState('');
+    const [spinner, setSpinner] = useState(false);    
+
 
     const fetchAlbumData = async () => {
+        setSpinner(true);
         const response = await axios('https://jsonplaceholder.typicode.com/photos?albumId='+params.id);
         setPicture(response.data)
+        setSpinner(false);
     }
 
     useEffect(()=>{
@@ -23,23 +27,23 @@ const Album = () =>{
                 <h1> Album {params.id}</h1>
             </div>
             <div className="image-container">
+                {spinner == true ? <p>Loading....</p>: null}
             <div className="image-gallery">
                 {picture.map((data,i)=>
                 <>
-                <div key={i} className= {data.url == toggle ? "img-card active" : "img-card" }>
-                    <img onClick={() => setToggle(data.url)} src={data.thumbnailUrl} alt={data.title}/>
+                <div key={i} className= {data.url == url ? "img-card active" : "img-card" }>
+                    <img onClick={() => setUrl(data.url)} src={data.thumbnailUrl} alt={data.title}/>
                 </div>
                 </>
                 )}
 
             </div>
-          
-            { toggle ? (
+            { url ?(
                 <div className="image-preview">
-                    <img src={toggle}/>
+                    <img src={url}/>
                 </div>
-            ):null}
-           </div>
+            ): null}
+           </div>   
         </div>
     );
 };

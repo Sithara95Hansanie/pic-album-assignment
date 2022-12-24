@@ -1,5 +1,6 @@
-.body{
-  background-color:#fff;
+body{
+  background-color: #fbfbfb;
+  margin : 0px 32px;
 }
 .card-tittle{
   display: flex;
@@ -16,17 +17,15 @@
 
 }
 .item{
-  /* width: 25%; */
   margin: 12px;
   text-align: center;
 }
 .card-box{
-  /* width: 100px; */
   border: none;
   background-color: #fff;
   padding: 12px;
   cursor:pointer;
-  border:1px solid  #010162;
+  border:1px solid  #cccccc;
   color: #010162;
   font-weight: 500;
 }
@@ -39,16 +38,9 @@
   flex-direction: row;
 }
 .image-gallery{
-    /* display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 8px;
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    /* gap: 10px; */
 }
 .img-card{
     width: 150;
